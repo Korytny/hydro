@@ -93,7 +93,7 @@ export default function Products() {
               </div>
 
               {/* Product image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
                 <img
                   src={product.image}
                   alt={product.name}

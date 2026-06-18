@@ -153,6 +153,9 @@ export default function Benefits() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 rounded-2xl border border-glass-border bg-white/[0.03] p-8 backdrop-blur-sm"
         >
+          <h3 className="text-center text-lg font-semibold text-white/80 mb-8 tracking-wide">
+            Технические характеристики
+          </h3>
           <div className="grid gap-8 sm:grid-cols-3">
             <div className="text-center">
               <div className="text-3xl font-bold text-cyan-accent sm:text-4xl">pH 8–11</div>
