@@ -8,8 +8,6 @@ import {
   Sparkles,
   Atom,
   Wind,
-  Battery,
-  Brain,
 } from 'lucide-react';
 
 const benefitCategories = [
@@ -19,6 +17,7 @@ const benefitCategories = [
     items: [
       'Детоксикация организма',
       'Выведение токсинов и тяжёлых металлов',
+      'Ускорение метаболизма и снижение веса',
       'Выведение камней из почек',
     ],
     gradient: 'from-cyan-accent/20 to-cyan-light/10',
@@ -31,6 +30,7 @@ const benefitCategories = [
       'Укрепление иммунитета',
       'Антиоксидантная защита на клеточном уровне',
       'Противовоспалительное действие',
+      'Защита от вирусов, уменьшение аллергий',
     ],
     gradient: 'from-blue-500/20 to-cyan-accent/10',
   },
@@ -39,6 +39,7 @@ const benefitCategories = [
     icon: Heart,
     items: [
       'Нормализация артериального давления',
+      'Нормализация уровня сахара',
       'Улучшение кровообращения',
       'Снижение уровня холестерина',
       'Профилактика сердечно-сосудистых заболеваний',
@@ -49,10 +50,10 @@ const benefitCategories = [
     title: 'Энергия и молодость',
     icon: Zap,
     items: [
-      'Повышение уровня энергии',
-      'Замедление процессов старения',
+      'Повышение уровня энергии и избавление от усталости',
+      'Замедление старения: уменьшение морщин, защита от УФ',
       'Улучшение состояния кожи',
-      'Ускорение восстановления после нагрузок',
+      'Ускорение восстановления после тренировок',
     ],
     gradient: 'from-cyan-accent/20 to-violet-500/10',
   },
@@ -73,8 +74,15 @@ const itemAnim = {
 export default function Benefits() {
   return (
     <section className="relative py-24 sm:py-32">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean via-ocean-surface/30 to-deep-ocean" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/water-hero.jpg"
+          alt=""
+          className="h-full w-full object-cover opacity-15"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean via-ocean-surface/30 to-deep-ocean" />
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -145,40 +153,6 @@ export default function Benefits() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* What you get — row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12"
-        >
-          <h3 className="text-center text-lg font-semibold text-white/90 sm:text-xl">
-            Что вы получите, выпивая от 1 литра в день?
-          </h3>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {[
-              { icon: Sparkles, title: 'Замедление старения', desc: 'Уменьшение морщин, защита от УФ-излучения' },
-              { icon: Zap, title: 'Ускорение метаболизма', desc: 'Снижение веса, выведение токсинов' },
-              { icon: Heart, title: 'Повышение иммунитета', desc: 'Защита от вирусов, уменьшение аллергий' },
-              { icon: Battery, title: 'Энергия и восстановление', desc: 'Избавление от усталости, восстановление после тренировок' },
-              { icon: Brain, title: 'Здоровье сердца и сосудов', desc: 'Нормализация давления и уровня сахара' },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="group rounded-xl border border-glass-border bg-white/[0.03] p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.06] hover:border-cyan-accent/30"
-              >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-accent/20 to-cyan-light/10">
-                  <item.icon className="h-4 w-4 text-cyan-accent" />
-                </div>
-                <h4 className="mt-2.5 text-sm font-semibold text-white">{item.title}</h4>
-                <p className="mt-0.5 text-xs text-white/50">{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Key metrics */}

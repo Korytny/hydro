@@ -126,34 +126,6 @@ const studies = [
 export default function Science() {
   return (
     <div className="pt-24 pb-16">
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-ocean-surface/50 via-deep-ocean to-deep-ocean" />
-        <div className="absolute top-[-10%] right-[-10%] h-[400px] w-[400px] rounded-full bg-cyan-accent/5 blur-[120px]" />
-
-        <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
-          >
-            Наука о{' '}
-            <span className="bg-gradient-to-r from-cyan-accent to-cyan-light bg-clip-text text-transparent">
-              водороде
-            </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-white/50"
-          >
-            Молекулярный водород — самый мощный и селективный антиоксидант
-          </motion.p>
-        </div>
-      </section>
-
       <HealthIntro />
 
       {/* Content sections */}

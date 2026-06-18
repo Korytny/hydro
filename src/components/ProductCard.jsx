@@ -19,7 +19,7 @@ export default function ProductCard({ product, index }) {
       </div>
 
       {/* Product image */}
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={product.image}
           alt={product.name}

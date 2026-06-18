@@ -72,34 +72,6 @@ const advantages = [
 export default function Product() {
   return (
     <div className="pt-24 pb-16">
-      {/* Header */}
-      <section className="relative overflow-hidden py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-ocean-surface/50 via-deep-ocean to-deep-ocean" />
-        <div className="absolute top-0 left-1/4 h-[300px] w-[300px] rounded-full bg-cyan-accent/5 blur-[100px]" />
-
-        <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
-          >
-            Наша{' '}
-            <span className="bg-gradient-to-r from-cyan-accent to-cyan-light bg-clip-text text-transparent">
-              продукция
-            </span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-4 max-w-2xl text-lg text-white/50"
-          >
-            Выбирайте удобный формат водородной воды для здорового образа жизни
-          </motion.p>
-        </div>
-      </section>
-
       {/* Products grid */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">

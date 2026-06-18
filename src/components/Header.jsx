@@ -6,7 +6,7 @@ import { Menu, X, MessageCircle } from 'lucide-react';
 const navLinks = [
   { href: '/', label: 'Главная' },
   { href: '/product', label: 'Продукты' },
-  { href: '/science', label: 'О науке' },
+  { href: '/science', label: 'Наука' },
   { href: '/contacts', label: 'Контакты' },
 ];
 
