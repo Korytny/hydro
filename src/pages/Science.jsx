@@ -1,5 +1,21 @@
 import { motion } from 'framer-motion';
-import { Atom, TestTube, Heart, Shield, BookOpen, ArrowRight } from 'lucide-react';
+import HealthIntro from '../components/HealthIntro';
+import {
+  Atom,
+  TestTube,
+  Heart,
+  Shield,
+  BookOpen,
+  ArrowRight,
+  Droplets,
+  Clock,
+  Thermometer,
+  CheckCircle,
+  Sparkles,
+  Brain,
+  Activity,
+  Recycle,
+} from 'lucide-react';
 
 const sections = [
   {
@@ -34,9 +50,69 @@ const sections = [
   {
     icon: Heart,
     title: 'Влияние на здоровье',
-    content:
-      'Благодаря мощному антиоксидантному действию, водородная вода оказывает комплексное положительное влияние на организм: снижает воспаление, улучшает метаболизм, защищает сердечно-сосудистую систему, улучшает когнитивные функции и замедляет возрастные изменения. Регулярное употребление водородной воды помогает организму поддерживать гомеостаз и противостоять негативным факторам окружающей среды.',
+    content: [
+      {
+        icon: Recycle,
+        label: 'Детоксикация',
+        desc: 'Очищает клетки и ткани, выводя шлаки и токсины.',
+      },
+      {
+        icon: Heart,
+        label: 'Защита сердца и сосудов',
+        desc: 'Снижает холестерин, улучшает кровообращение, поддерживает при гипертонии и стенокардии.',
+      },
+      {
+        icon: Activity,
+        label: 'Помощь при хронических заболеваниях',
+        desc: 'Уменьшает уровень глюкозы (важно при диабете), мочевой кислоты (при подагре), улучшает состояние печени, почек и ЖКТ.',
+      },
+      {
+        icon: Shield,
+        label: 'Укрепление иммунитета',
+        desc: 'Ускоряет восстановление после болезней, смягчает симптомы аутоиммунных заболеваний.',
+      },
+      {
+        icon: Sparkles,
+        label: 'Молодость и красота',
+        desc: 'Борется с целлюлитом, улучшает состояние кожи, поддерживает плотность костей, замедляет старение.',
+      },
+      {
+        icon: Brain,
+        label: 'Энергия и ясность мышления',
+        desc: 'Снимает усталость, повышает концентрацию, регулирует температуру тела.',
+      },
+    ],
     gradient: 'from-rose-400/20 to-cyan-accent/10',
+  },
+];
+
+const advantages = [
+  {
+    icon: CheckCircle,
+    text: 'Безопасно — нет противопоказаний и побочных эффектов',
+  },
+  {
+    icon: CheckCircle,
+    text: 'Эффективно — результат заметен уже через несколько дней',
+  },
+  {
+    icon: CheckCircle,
+    text: 'Не вызывает отёков',
+  },
+];
+
+const recommendations = [
+  {
+    icon: Droplets,
+    text: 'Пейте от 1 литра в день в любое время',
+  },
+  {
+    icon: Clock,
+    text: 'Открытую бутылку (банку) рекомендуется употребить в течение часа',
+  },
+  {
+    icon: Thermometer,
+    text: 'Храните при температуре от +1°C до +18°C',
   },
 ];
 
@@ -78,6 +154,8 @@ export default function Science() {
         </div>
       </section>
 
+      <HealthIntro />
+
       {/* Content sections */}
       <section className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
         {sections.map((section, idx) => (
@@ -101,15 +179,33 @@ export default function Science() {
                 </h2>
 
                 {Array.isArray(section.content) ? (
-                  <div className="mt-4 space-y-4">
+                  <div className="mt-4 space-y-5">
                     {section.content.map((item) => (
-                      <div key={item.label}>
-                        <h3 className="text-base font-semibold text-cyan-accent">
-                          {item.label}
-                        </h3>
-                        <p className="mt-1 text-sm leading-relaxed text-white/60 sm:text-base">
-                          {item.desc}
-                        </p>
+                      <div key={item.label} className="flex items-start gap-3">
+                        {'icon' in item ? (
+                          <>
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-accent/20 to-cyan-light/10 mt-0.5">
+                              <item.icon className="h-4 w-4 text-cyan-accent" />
+                            </div>
+                            <div>
+                              <h3 className="text-base font-semibold text-white">
+                                {item.label}
+                              </h3>
+                              <p className="mt-1 text-sm leading-relaxed text-white/60">
+                                {item.desc}
+                              </p>
+                            </div>
+                          </>
+                        ) : (
+                          <div>
+                            <h3 className="text-base font-semibold text-cyan-accent">
+                              {item.label}
+                            </h3>
+                            <p className="mt-1 text-sm leading-relaxed text-white/60">
+                              {item.desc}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -124,8 +220,62 @@ export default function Science() {
         ))}
       </section>
 
+      {/* Advantages */}
+      <section className="mx-auto mt-10 max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="rounded-2xl border border-glass-border bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10"
+        >
+          <h2 className="text-xl font-semibold text-white sm:text-2xl">
+            Преимущества{' '}
+            <span className="bg-gradient-to-r from-cyan-accent to-cyan-light bg-clip-text text-transparent">
+              водородной воды
+            </span>
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {advantages.map((item) => (
+              <div key={item.text} className="flex items-start gap-3">
+                <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-cyan-accent" />
+                <span className="text-sm text-white/70 sm:text-base">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Recommendations */}
+      <section className="mx-auto mt-8 max-w-4xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="rounded-2xl border border-glass-border bg-white/[0.03] p-8 backdrop-blur-sm sm:p-10"
+        >
+          <h2 className="text-xl font-semibold text-white sm:text-2xl">
+            Рекомендации по{' '}
+            <span className="bg-gradient-to-r from-cyan-accent to-cyan-light bg-clip-text text-transparent">
+              употреблению
+            </span>
+          </h2>
+          <div className="mt-6 grid gap-5 sm:grid-cols-3">
+            {recommendations.map((item) => (
+              <div key={item.text} className="flex flex-col items-center text-center gap-3 rounded-xl border border-glass-border bg-white/[0.03] p-5">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-accent/20 to-cyan-light/10">
+                  <item.icon className="h-5 w-5 text-cyan-accent" />
+                </div>
+                <span className="text-sm text-white/70">{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       {/* Research evidence */}
-      <section className="mx-auto mt-20 max-w-4xl px-4 sm:px-6 lg:px-8">
+      <section className="mx-auto mt-8 max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

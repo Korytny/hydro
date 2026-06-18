@@ -8,6 +8,8 @@ import {
   Sparkles,
   Atom,
   Wind,
+  Battery,
+  Brain,
 } from 'lucide-react';
 
 const benefitCategories = [
@@ -143,6 +145,40 @@ export default function Benefits() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* What you get — row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12"
+        >
+          <h3 className="text-center text-lg font-semibold text-white/90 sm:text-xl">
+            Что вы получите, выпивая от 1 литра в день?
+          </h3>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {[
+              { icon: Sparkles, title: 'Замедление старения', desc: 'Уменьшение морщин, защита от УФ-излучения' },
+              { icon: Zap, title: 'Ускорение метаболизма', desc: 'Снижение веса, выведение токсинов' },
+              { icon: Heart, title: 'Повышение иммунитета', desc: 'Защита от вирусов, уменьшение аллергий' },
+              { icon: Battery, title: 'Энергия и восстановление', desc: 'Избавление от усталости, восстановление после тренировок' },
+              { icon: Brain, title: 'Здоровье сердца и сосудов', desc: 'Нормализация давления и уровня сахара' },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="group rounded-xl border border-glass-border bg-white/[0.03] p-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.06] hover:border-cyan-accent/30"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-accent/20 to-cyan-light/10">
+                  <item.icon className="h-4 w-4 text-cyan-accent" />
+                </div>
+                <h4 className="mt-2.5 text-sm font-semibold text-white">{item.title}</h4>
+                <p className="mt-0.5 text-xs text-white/50">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Key metrics */}
