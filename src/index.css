@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ── Design System: Hydro Genium ── */
+/* Inspired by Air style (refero.design) — sky canvas, frosted glass */
+/* Adapted for hydrogen water brand: deep ocean, cyan accents, clean */
+
+@theme {
+  /* ── Colors ── */
+  --color-deep-ocean: #0A2E4A;
+  --color-ocean-surface: #0F3B5C;
+  --color-cyan-accent: #00B4D8;
+  --color-cyan-light: #7EE8D6;
+  --color-midnight-ink: #0B1B2B;
+  --color-charcoal-text: #2C3E50;
+  --color-ice-bg: #F0F7FA;
+  --color-cloud-white: #FFFFFF;
+  --color-haze-grey: #E8F0F4;
+  --color-glass-border: rgba(255, 255, 255, 0.15);
+
+  /* ── Typography ── */
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+
+  /* ── Glassmorphism ── */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+
+  /* ── Spacing ── */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 11px;
+  --radius-xl: 14px;
+}
+
+/* ── Base styles ── */
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-deep-ocean);
+  color: var(--color-cloud-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Glass utility ── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* ── Gradient text ── */
+.text-gradient {
+  background: linear-gradient(135deg, #00B4D8 0%, #7EE8D6 50%, #FFFFFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(0, 180, 216, 0.3);
+  color: white;
+}
+
+/* ── Animations ── */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-deep-ocean);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
