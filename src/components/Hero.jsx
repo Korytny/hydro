@@ -3,13 +3,17 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Aurora background */}
+      {/* Background with image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean via-ocean-surface to-deep-ocean" />
-        {/* Aurora blobs */}
+        <img
+          src="/images/water-hero.jpg"
+          alt=""
+          className="h-full w-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean/80 via-deep-ocean/60 to-deep-ocean" />
+        {/* Aurora blobs overlay */}
         <div className="absolute top-[-20%] left-[-10%] h-[600px] w-[600px] rounded-full bg-cyan-accent/10 blur-[120px]" />
         <div className="absolute top-[-10%] right-[-5%] h-[500px] w-[500px] rounded-full bg-cyan-light/8 blur-[100px]" />
-        <div className="absolute bottom-[-15%] left-[30%] h-[400px] w-[400px] rounded-full bg-blue-500/8 blur-[80px]" />
         {/* Grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"

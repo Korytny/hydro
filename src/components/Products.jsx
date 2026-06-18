@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Droplets, ShieldCheck, Recycle, Sparkles } from 'lucide-react';
 
 const products = [
   {
@@ -7,14 +6,13 @@ const products = [
     tagline: 'Премиальная чистота вкуса',
     volume: '500 мл',
     material: 'Стекло',
+    image: '/images/glass-bottle.jpg',
     features: [
       'Многоразовая, экологичная',
       'Сохраняет вкус и свежесть',
       'Премиальный дизайн',
       'Высокая концентрация H₂',
     ],
-    icon: Sparkles,
-    gradient: 'from-cyan-accent to-blue-500',
     badge: 'Хит',
   },
   {
@@ -22,14 +20,13 @@ const products = [
     tagline: 'Здоровье в дорогу',
     volume: '330 мл',
     material: 'Алюминий',
+    image: '/images/aluminum-can.jpg',
     features: [
       'Удобно брать с собой',
       'Не бьётся',
       'Лёгкая и компактная',
       '100% перерабатываемая',
     ],
-    icon: Recycle,
-    gradient: 'from-cyan-light to-emerald-400',
     badge: 'Новинка',
   },
   {
@@ -37,14 +34,13 @@ const products = [
     tagline: 'Для бизнеса и партнёров',
     volume: 'От 1000 шт.',
     material: 'Любая тара',
+    image: '/images/wellness.jpg',
     features: [
       'Индивидуальный дизайн',
       'Сертификация качества',
       'Гибкие условия сотрудничества',
       'Доставка по всей РФ',
     ],
-    icon: ShieldCheck,
-    gradient: 'from-violet-500 to-cyan-accent',
     badge: 'B2B',
   },
 ];
@@ -87,7 +83,7 @@ export default function Products() {
               className="group relative overflow-hidden rounded-2xl border border-glass-border bg-white/[0.03] backdrop-blur-sm transition-all duration-500 hover:bg-white/[0.06] hover:border-cyan-accent/30 hover:-translate-y-1"
             >
               {/* Shine border */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-cyan-accent/10 to-transparent animate-shimmer" />
               </div>
 
@@ -96,14 +92,14 @@ export default function Products() {
                 {product.badge}
               </div>
 
-              {/* Product icon area */}
-              <div className="relative flex items-center justify-center h-48 bg-gradient-to-br from-white/[0.02] to-white/[0.06]">
-                <div className={`h-24 w-24 rounded-2xl bg-gradient-to-br ${product.gradient} flex items-center justify-center shadow-lg shadow-cyan-accent/20`}>
-                  <product.icon className="h-10 w-10 text-white" />
-                </div>
-                {/* Floating particles */}
-                <div className="absolute top-6 left-8 h-2 w-2 rounded-full bg-cyan-accent/30 blur-sm" />
-                <div className="absolute bottom-8 right-10 h-1.5 w-1.5 rounded-full bg-cyan-light/30 blur-sm" />
+              {/* Product image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-ocean/60 to-transparent" />
               </div>
 
               {/* Content */}

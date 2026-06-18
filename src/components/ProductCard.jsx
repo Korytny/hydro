@@ -18,13 +18,14 @@ export default function ProductCard({ product, index }) {
         {product.badge}
       </div>
 
-      {/* Icon area */}
-      <div className="relative flex items-center justify-center h-48 bg-gradient-to-br from-white/[0.02] to-white/[0.06]">
-        <div className={`h-24 w-24 rounded-2xl bg-gradient-to-br ${product.gradient} flex items-center justify-center shadow-lg shadow-cyan-accent/20`}>
-          <product.icon className="h-10 w-10 text-white" />
-        </div>
-        <div className="absolute top-6 left-8 h-2 w-2 rounded-full bg-cyan-accent/30 blur-sm" />
-        <div className="absolute bottom-8 right-10 h-1.5 w-1.5 rounded-full bg-cyan-light/30 blur-sm" />
+      {/* Product image */}
+      <div className="relative h-56 overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-ocean/60 to-transparent" />
       </div>
 
       {/* Content */}

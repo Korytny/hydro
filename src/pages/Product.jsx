@@ -17,6 +17,7 @@ const products = [
     ],
     icon: Sparkles,
     gradient: 'from-cyan-accent to-blue-500',
+    image: '/images/glass-bottle.jpg',
     badge: 'Хит продаж',
     description:
       'Наши стеклянные бутылки — идеальный выбор для дома и офиса. Стекло не вступает в реакцию с водой, сохраняя её чистоту и свежесть. Бутылка оснащена герметичной крышкой, которая удерживает водород внутри.',
@@ -35,6 +36,7 @@ const products = [
     ],
     icon: Recycle,
     gradient: 'from-cyan-light to-emerald-400',
+    image: '/images/aluminum-can.jpg',
     badge: 'Новинка',
     description:
       'Алюминиевые банки Hydro Genium созданы для активного образа жизни. Берите их на тренировку, в поездку или на прогулку — водородная вода всегда будет под рукой.',
@@ -53,6 +55,7 @@ const products = [
     ],
     icon: ShieldCheck,
     gradient: 'from-violet-500 to-cyan-accent',
+    image: '/images/wellness.jpg',
     badge: 'B2B',
     description:
       'Предлагаем выгодные условия для дистрибьюторов, фитнес-клубов, спа-салонов и магазинов здорового питания. Возможно производство под вашим брендом.',

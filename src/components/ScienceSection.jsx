@@ -33,6 +33,9 @@ export default function ScienceSection() {
     <section className="relative py-24 sm:py-32">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean via-ocean-surface/20 to-deep-ocean" />
+      <div className="absolute inset-0 opacity-10">
+        <img src="/images/molecule.jpg" alt="" className="h-full w-full object-cover" />
+      </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-cyan-accent/3 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
