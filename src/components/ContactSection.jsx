@@ -1,7 +1,29 @@
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 
 export default function ContactSection() {
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = nameRef.current?.value?.trim() || '';
+    const email = emailRef.current?.value?.trim() || '';
+    const message = messageRef.current?.value?.trim() || '';
+
+    const text = encodeURIComponent(
+      `🆕 Новое сообщение с сайта Hydrogenium!` +
+      (name ? `\n\n👤 Имя: ${name}` : '') +
+      (email ? `\n📧 Email: ${email}` : '') +
+      `\n💬 ${message}`
+    );
+
+    window.open(`https://t.me/hydrogeniumH2?text=${text}`, '_blank');
+  };
+
   return (
     <section className="relative py-24 sm:py-32">
       <div className="absolute inset-0 bg-gradient-to-b from-deep-ocean via-ocean-surface/30 to-deep-ocean" />
@@ -66,15 +88,16 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl border border-glass-border bg-white/[0.03] p-6 backdrop-blur-sm sm:p-8"
+            className="rounded-2xl border border-glass-border bg-white/[0.04] p-6 backdrop-blur-sm sm:p-8"
           >
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-white/60">
                     Имя
                   </label>
                   <input
+                    ref={nameRef}
                     type="text"
                     placeholder="Ваше имя"
                     className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-cyan-accent/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-cyan-accent/30"
@@ -85,6 +108,7 @@ export default function ContactSection() {
                     Email
                   </label>
                   <input
+                    ref={emailRef}
                     type="email"
                     placeholder="your@email.com"
                     className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-cyan-accent/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-cyan-accent/30"
@@ -96,6 +120,7 @@ export default function ContactSection() {
                   Сообщение
                 </label>
                 <textarea
+                  ref={messageRef}
                   rows={4}
                   placeholder="Ваше сообщение..."
                   className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-cyan-accent/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-cyan-accent/30 resize-none"

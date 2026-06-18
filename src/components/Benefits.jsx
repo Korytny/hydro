@@ -152,9 +152,11 @@ export default function Benefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center text-lg font-semibold text-white/80 mb-6 tracking-wide"
+            className="text-center text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-6"
           >
-            Технические характеристики
+            <span className="bg-gradient-to-r from-cyan-accent to-cyan-light bg-clip-text text-transparent">
+              Технические характеристики
+            </span>
           </motion.h3>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
