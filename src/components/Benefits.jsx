@@ -163,8 +163,8 @@ export default function Benefits() {
               <div className="mt-2 text-sm text-white/50">Отрицательный окислительно-восстановительный потенциал</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-accent sm:text-4xl">&gt;99%</div>
-              <div className="mt-2 text-sm text-white/50">Чистота молекулярного водорода</div>
+              <div className="text-3xl font-bold text-cyan-accent sm:text-4xl">55 дин/см²</div>
+              <div className="mt-2 text-sm text-white/50">Поверхностное натяжение</div>
             </div>
           </div>
         </motion.div>

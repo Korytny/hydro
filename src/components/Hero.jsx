@@ -26,26 +26,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-32 pb-20 text-center">
-        {/* Lamp effect */}
-        <div className="relative mb-12 flex flex-col items-center justify-center overflow-hidden">
-          {/* Lamp line */}
-          <div className="relative flex items-center justify-center">
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 300, opacity: 1 }}
-              transition={{ duration: 1.5, ease: 'easeOut' }}
-              className="h-px bg-gradient-to-r from-transparent via-cyan-accent to-transparent"
-            />
-          </div>
-          <motion.div
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-            className="h-20 w-px bg-gradient-to-b from-cyan-accent to-transparent origin-top"
-          />
-        </div>
-
-        {/* Main heading — typewriter style */}
+        {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
